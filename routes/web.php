@@ -23,5 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/project', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('admin.index');
-Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('admin.create');
+//TODO adicionei um prefixo e agrupei as rotas de modo que somente quem està logado consegue visualizar a pagina
+Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
+Route::get('/project', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('index');
+Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'create'])->name('create');
+});
