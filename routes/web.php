@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/project', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('admin.index');
+Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('admin.create');
