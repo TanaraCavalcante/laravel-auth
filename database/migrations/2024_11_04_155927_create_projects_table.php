@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('category')->nullable(); // Tipo de tecnologia
             $table->string('tech_stack')->nullable(); // Tecnologias usadas no projeto
             $table->string('github_link')->nullable(); // Link do repositório no GitHub
-            $table->date('created')->nullable();// Dia de criaçao do projeto
+            $table->date('creation_date')->nullable();// Dia de criaçao do projeto
             $table->timestamps();
-        })
+        });
     }
 
     /**
