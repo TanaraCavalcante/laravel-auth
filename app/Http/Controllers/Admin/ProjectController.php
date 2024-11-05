@@ -28,7 +28,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route("admin.index");
     }
 
     /**
@@ -36,7 +36,7 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view("admin.show");
     }
 
     /**
