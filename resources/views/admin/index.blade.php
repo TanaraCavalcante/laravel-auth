@@ -9,7 +9,6 @@
                     <thead>
                         <tr>
                             <th scope="col">Project Title</th>
-                            <th scope="col">Description</th>
                             <th scope="col">Category</th>
                             <th scope="col">Teck Stack</th>
                             <th scope="col">GitHub Link</th>
@@ -21,20 +20,19 @@
                     @forelse ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->title}}</th>
-                            <td>{{ $project->description}}</td>
                             <td>{{ $project->category}}</td>
                             <td class="px-2">{{ $project->tech_stack}}</td>
                             <td class="px-2">{{ $project->github_link}}</td>
                             <td class="px-2">{{ $project->creation_date}}</td>
                             <td class="col-2">
-                                <a href="{{ route("movies.show", $movie->id)}}" class="btn btn-sm btn-outline-warning">Show</a>
-                                <a href="{{ route("movies.edit", $movie->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
+                                <a href="{{ route("admin.show", $movie->id)}}" class="btn btn-sm btn-outline-warning">Show</a>
+                                <a href="{{ route("admin.edit", $movie->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
                                 {{-- implemento um form com um botao dentro de modo que este form enviara o meu metodo diretamente ao db, executando a oredem de deletar nesse caso. --}}
-                                <form action="{{ route("movie.delete", $movie->id)}}" method="POST" class="d-inline">
+                                {{-- <form action="{{ route("admin.delete", $movie->id)}}" method="POST" class="d-inline">
                                     @csrf
                                     @method("DELETE")
                                     <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
                     @empty
