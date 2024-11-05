@@ -30,6 +30,16 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        // Validaçao dos dados fornecidos pelo utente
+        $movieData = $request->validate([
+            "title" => "required|string|min:2|max:255", //uma stringa con min 4 caracter max 255, pois no db è un VARCHAR(255)
+            "description" => "required|string|min:6|max:255",
+            "category" => "required|string|min:2|max:255",
+            "tech_stack" => "required|string|min:4|max:255",
+            "github_link" => "required|url",
+            "creation_date" => "required|date",
+        ]);
+
         $formData = $request -> all();
         $newProject = Project::create($formData);
         return redirect()->route("admin.show", ["id"=>$newProject->id]);
