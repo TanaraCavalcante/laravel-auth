@@ -6,6 +6,17 @@
         <div class="row justify-content-center py-3">
             <h2 class="col-12 col-md-8 mb-5" >Editing {{$project->title}}</h2>
 
+              {{-- Display de validaçao dos dados fornecidos pelo utente --}}
+              @if ($errors->any())
+              <div class="alert alert-warning">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+              @endif
+
             {{-- form em branco para coleta de dados do usuario--}}
             <div class="col-12 col-md-8">
                 <form method="POST" action="{{route("admin.update", $project->id)}}">
