@@ -49,7 +49,8 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-         return view("admin.edit");
+        $project = Project::findOrFail($id);
+         return view("admin.edit", compact("project"));
     }
 
     /**
@@ -57,7 +58,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // return redirect()->route("admin.show",["id"]);
+        $formData = $request->all();
+        $project = Project::findOrFail($id);
+
+        $project->title = $formData["title"];
+        $project->description = $formData["description"];
+        $project->category = $formData["category"];
+        $project->tech_stack = $formData["tech_stack"];
+        $project->github_link = $formData["github_link"];
+        $project->creation_date = $formData["creation_date"];
+        $project->update();
     }
 
     /**

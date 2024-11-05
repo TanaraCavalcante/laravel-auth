@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-<section id="create">
+<section>
     <div class="container">
         <div class="row justify-content-center py-3">
             <h2 class="col-12 col-md-8 mb-5" >Insert a new Project</h2>
