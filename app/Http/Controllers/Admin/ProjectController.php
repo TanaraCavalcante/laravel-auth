@@ -30,7 +30,9 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route("admin.index");
+        $formData = $request -> all();
+        $newProject = Project::create($formData);
+        return redirect()->route("admin.show", ["id"=>$newProject->id]);
     }
 
     /**
