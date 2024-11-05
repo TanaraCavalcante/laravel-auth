@@ -68,6 +68,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // Validaçao dos dados fornecidos pelo utente
+        $movieData = $request->validate([
+            "title" => "required|string|min:2|max:255", //uma stringa con min 4 caracter max 255, pois no db è un VARCHAR(255)
+            "description" => "required|string|min:6|max:255",
+            "category" => "required|string|min:2|max:255",
+            "tech_stack" => "required|string|min:2|max:255",
+            "github_link" => "required|url",
+            "creation_date" => "required|date",
+        ]);
+
         $formData = $request->all();
         $project = Project::findOrFail($id);
 
@@ -88,5 +98,6 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
         return redirect()->route("admin.index");
-    }
+
+   }
 }
