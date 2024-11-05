@@ -28,11 +28,11 @@
                                 <a href="{{ route("admin.show", $project->id)}}" class="btn btn-sm btn-outline-warning">Show</a>
                                 <a href="{{ route("admin.edit", $project->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
                                 {{-- implemento um form com um botao dentro de modo que este form enviara o meu metodo diretamente ao db, executando a oredem de deletar nesse caso. --}}
-                                {{-- <form action="{{ route("admin.delete", $movie->id)}}" method="POST" class="d-inline">
+                                <form action="{{ route("admin.delete", $project->id)}}" method="POST" class="d-inline">
                                     @csrf
                                     @method("DELETE")
                                     <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                                </form> --}}
+                                </form>
                             </td>
                         </tr>
                     @empty
