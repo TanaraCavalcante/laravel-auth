@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         //chamo meu ProjectSeeder diretamente do db com: php artisan db:seed
         $this -> call(ProjectSeeder::class);
+
     }
 }
