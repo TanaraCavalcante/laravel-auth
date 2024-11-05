@@ -44,7 +44,7 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-        return view("admin.edit");
+         return view("admin.edit");
     }
 
     /**
@@ -52,7 +52,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // return redirect()->route("admin.show",["id"]);
     }
 
     /**
