@@ -10,7 +10,7 @@
                         <tr>
                             <th scope="col">Project Title</th>
                             <th scope="col">Category</th>
-                            <th scope="col">Front End or Back End</th>
+                            <th scope="col">Tech Stack</th>
                             <th scope="col">GitHub Link</th>
                             <th scope="col">Creation Date</th>
 

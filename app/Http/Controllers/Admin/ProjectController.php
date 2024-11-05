@@ -88,6 +88,8 @@ class ProjectController extends Controller
         $project->github_link = $formData["github_link"];
         $project->creation_date = $formData["creation_date"];
         $project->update();
+
+        return redirect()->route("admin.show", ["id"=>$project->id]);
     }
 
     /**
@@ -98,6 +100,5 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
         return redirect()->route("admin.index");
-
    }
 }

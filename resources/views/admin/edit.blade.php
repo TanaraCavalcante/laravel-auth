@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="col-12 col-md-11 text-end">
-                        <button type="submit" class="btn btn-outline-success my-3">Insert</button>
+                        <button type="submit" class="btn btn-outline-success my-3">Edit {{$project->title}}</button>
                         <button type="reset" class="btn btn-outline-warning  my-3">Reset Fields</button>
                     </div>
                 </form>
