@@ -29,4 +29,5 @@ Route::get('/project', [App\Http\Controllers\Admin\ProjectController::class, 'in
 Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'create'])->name('create');
 Route::get('/project/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'show'])->name('show');
 Route::post('/project', [App\Http\Controllers\Admin\ProjectController::class, 'store'])->name('store');
+Route::get('/project/{id}/edit', [App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('edit');
 });
