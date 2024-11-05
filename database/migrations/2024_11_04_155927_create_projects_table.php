@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('title'); // Título do projeto
+            $table->text('description')->nullable(); // Descrição do projeto
+            $table->string('category')->nullable(); // Tipo de tecnologia
+            $table->string('tech_stack')->nullable(); // Tecnologias usadas no projeto
+            $table->string('github_link')->nullable(); // Link do repositório no GitHub
+            $table->date('created')->nullable();// Dia de criaçao do projeto
             $table->timestamps();
-        });
+        })
     }
 
     /**
