@@ -46,7 +46,7 @@
                     <div class="mb-3 row">
                         <label for="project-github_link" class="col-sm-3 col-form-label">GitHub Link</label>
                         <div class="col-sm-8">
-                        <input type="text" class="form-control" id="project-github_link" name="github_link" value="{{ old('github_link', $project->github_link)}}">
+                        <input type="url" class="form-control" id="project-github_link" name="github_link" value="{{ old('github_link', $project->github_link)}}">
                         </div>
                     </div>
 
