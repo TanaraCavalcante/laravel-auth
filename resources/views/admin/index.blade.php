@@ -10,8 +10,7 @@
                         <tr>
                             <th scope="col">Project Title</th>
                             <th scope="col">Category</th>
-                            <th scope="col">Tech Stack</th>
-                            <th scope="col">GitHub Link</th>
+                            <th scope="col">Project Type</th>
                             <th scope="col">Creation Date</th>
 
                         </tr>
@@ -22,7 +21,6 @@
                             <th scope="row">{{ $project->title}}</th>
                             <td>{{ $project->category}}</td>
                             <td class="px-2">{{ $project->tech_stack}}</td>
-                            <td class="px-2">{{ $project->github_link}}</td>
                             <td class="px-2">{{ $project->creation_date}}</td>
                             <td class="col-2">
                                 <a href="{{ route("admin.show", $project->id)}}" class="btn btn-sm btn-outline-warning">Show</a>

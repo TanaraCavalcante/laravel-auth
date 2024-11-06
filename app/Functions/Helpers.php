@@ -1,5 +1,5 @@
 <?php
-namespace app\Functions;
+namespace App\Functions;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
@@ -16,7 +16,7 @@ class Helpers
         if($file === false){
             throw new FileNotFoundException('File not avaliable at this path');
         }
-        while (($row = fgetcsv($file)) !== FALSE){
+        while (($row = fgetcsv($file)) !== false){
             $result[] = $row;
         }
         fclose($file);
