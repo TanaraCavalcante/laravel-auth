@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="project-tech_stack" class="col-sm-3 col-form-label">Tech Stack (FE or BE)</label>
+                        <label for="project-tech_stack" class="col-sm-3 col-form-label">Project Type</label>
                         <div class="col-sm-2">
                         <input type="text" class="form-control" id="project-tech_stack" name="tech_stack" value="{{ old('tech_stack')}}">
                         </div>
