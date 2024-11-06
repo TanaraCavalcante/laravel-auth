@@ -15,13 +15,13 @@ use App\Http\Controllers\Admin\ProjectController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //TODO adicionei um prefixo e agrupei as rotas de modo que somente quem està logado consegue visualizar a pagina
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
